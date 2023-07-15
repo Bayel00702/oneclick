@@ -1,7 +1,28 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Card from "../../../components/Card/Card";
+import {useDispatch, useSelector} from "react-redux";
+import {getProducts} from "../../../features/products/products";
 
 const ProductList = () => {
+
+    const dispatch = useDispatch();
+    const {data, isLoading} = useSelector(store => store.products);
+
+    useEffect(() => {
+        dispatch(getProducts())
+    }, []);
+
+    console.log("pending", isLoading);
+
+
+    if (isLoading){
+        return (
+            <h2>
+                ...Loading
+            </h2>
+        )
+    }
+
     return (
         <section className="product-list">
             <div className="container">
@@ -9,7 +30,12 @@ const ProductList = () => {
                     Все товары
                 </h2>
                 <div className="product-list__row">
-                    <Card/>
+                    {
+                        data.map((item, idx) => (
+                            <Card item={item} key={item.id || idx}/>
+                        ))
+                    }
+
                 </div>
             </div>
         </section>

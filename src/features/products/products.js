@@ -5,9 +5,10 @@ export const getProducts = createAsyncThunk(
     "products/getProducts",
     async (_,thunkAPI) => {
         try {
-            const res = axios('https://storedbs.onrender.com/products')
-        }catch (err) {
-
+            const res = await axios('https://storedbs.onrender.com/products');
+            return res.data
+        }catch (error) {
+            return thunkAPI.rejectWithValue(error)
         }
     }
 
@@ -17,9 +18,25 @@ export const getProducts = createAsyncThunk(
 const productsSlice = createSlice({
    name: "products",
    initialState: {
-       data: []
+       data: [],
+       isLoading: false,
+       error: ''
    },
-    reducers: {}
+    reducers: {},
+    extraReducers: (builder) => {
+       builder
+           .addCase(getProducts.pending, state => {
+           state.isLoading = true
+       })
+       .addCase(getProducts.fulfilled, (state, {payload}) => {
+           state.isLoading = false;
+           state.data = payload
+       })
+           .addCase(getProducts.rejected, state => {
+               state.isLoading = false
+           })
+
+    }
 });
 
 export default productsSlice.reducer
