@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +15,14 @@
   padding: 0 20px;
 }
 
+button{
+  border: none;
+  cursor: pointer;
+}
+
 @import "header";
 @import "category-list";
 @import "product-list";
 @import "register";
+@import "goods";
+@import "catalog";

@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import Room from "../pages/Room/Room";
 import Catalog from "../pages/Catalog/Catalog";
+import Product from "../pages/Product/Product";
 
 
 export default function Router () {
@@ -22,6 +23,15 @@ export default function Router () {
                     path: '/room',
                     element: <Room/>
                 },
+                {
+                    path: '/catalog',
+                    element: <Catalog/>
+                },
+
+                {
+                    path: '/product/:id',
+                    element: <Product/>
+                }
             ]
         },
         {
@@ -31,11 +41,6 @@ export default function Router () {
         {
             path: '/login',
             element: <Login/>
-        },
-
-        {
-            path: '/catalog',
-            element: <Catalog/>
         }
     ]);
     return routes

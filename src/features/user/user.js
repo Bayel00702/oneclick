@@ -9,10 +9,8 @@ const userSlice = createSlice({
    },
     reducers:{
        logIn: (state, {payload}) => {
-           state.email = payload
+           state.user = payload
        }
-
-
     }
 });
 

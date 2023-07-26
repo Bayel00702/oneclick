@@ -4,18 +4,20 @@
     display: flex;
     column-gap: 25px;
     row-gap: 35px;
+    flex-wrap: wrap;
+    margin: 0 0 30px ;
   }
   &__card {
     width: calc(25% - 18.75px);
     padding: 20px;
     border-radius: 30px;
     background: linear-gradient(135deg, #FFF 0%, #FFF 100%);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05) inset;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05) inset;
     text-align: center;
     img {
       width: 100%;
-      max-height: 400px;
-      object-fit: cover;
+      max-height: 100px;
+      object-fit: contain;
     }
     &-title {
       color: #000;
@@ -29,5 +31,12 @@
       font-weight: 500;
       line-height: 32px;
     }
+  }
+  &__link{
+    padding: 15px 40px;
+    background: #FF8A1E;
+    border-radius: 15px;
+    color: #FFFFFF;
+    font-weight: 500;
   }
 }

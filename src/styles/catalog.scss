@@ -1,0 +1,38 @@
+.catalog{
+  padding: 40px 0 30px;
+
+  &__row{
+    display: flex;
+    column-gap: 50px;
+  }
+  &__filter{
+    width: 25%;
+
+    &-selects{
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    &-prices{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 10px;
+      margin: 20px 0 40px;
+      &__price{
+        font-weight: 500;
+        font-size: 13px;
+        color: #414141;
+        padding: 7px 23px;
+        background: #F8F8F8;
+        border-radius: 3px;
+        border: none;
+      }
+    }
+    &-button{
+      text-align: center;
+    }
+  }
+}

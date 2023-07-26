@@ -44,7 +44,7 @@ const Form = () => {
         axios.post('https://storedbs.onrender.com/login', data)
             .then((res) => {
                 dispatch(logIn(res.data));
-                localStorage.getItem('user');
+                localStorage.setItem('user', JSON.stringify(res.data));
                 navigate('/')
             })
             .catch(error => console.log(error))

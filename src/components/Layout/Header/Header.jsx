@@ -37,7 +37,7 @@ const Header = () => {
                         <Link to={'/cart'} className="header__profile-link">
                             <AiOutlineShoppingCart/>
                         </Link>
-                        <Link to={user.email.length ? '/room' :'/login'} className="header__profile-link">
+                        <Link to={localStorage.getItem('user') !== null ? '/room' : '/login'} className="header__profile-link">
                             <AiOutlineUser/>
                         </Link>
                     </div>

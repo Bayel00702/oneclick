@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import Card from "../../../components/Card/Card";
 import {useDispatch, useSelector} from "react-redux";
 import {getProducts} from "../../../features/products/products";
+import {Link} from 'react-router-dom'
 
 const ProductList = () => {
 
@@ -27,7 +28,7 @@ const ProductList = () => {
         <section className="product-list">
             <div className="container">
                 <h2 className="category-list__title">
-                    Все товары
+                    Хиты
                 </h2>
                 <div className="product-list__row">
                     {
@@ -37,6 +38,7 @@ const ProductList = () => {
                     }
 
                 </div>
+                <Link to='/catalog' className="product-list__link">See more</Link>
             </div>
         </section>
     );
